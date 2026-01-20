@@ -1,0 +1,63 @@
+channels:
+  - id: "UCbfYPyITQ-7l4upoX8nvctg"
+    name: "Two Minute Papers"
+    url: "https://www.youtube.com/@TwoMinutePapers"
+    domain: "ai"
+    priority: 1
+  - id: "UCZHmQk67mN31jGog8FnnExg"
+    name: "Yannic Kilcher"
+    url: "https://www.youtube.com/@YannicKilcher"
+    domain: "ai"
+    priority: 2
+  - id: "UCYLOQOIm89O0Bj3M26YNhQQ"
+    name: "AI Explained"
+    url: "https://www.youtube.com/@aiexplained-official"
+    domain: "ai"
+    priority: 3
+  - id: "UCSv4qL8vmoSH7GaPjuqRiCQ"
+    name: "Matt Wolfe"
+    url: "https://www.youtube.com/@maboroshi"
+    domain: "ai"
+    priority: 4
+  - id: "UCsBjURrPoezykLs9EqgamOA"
+    name: "Fireship"
+    url: "https://www.youtube.com/@Fireship"
+    domain: "ai"
+    priority: 5
+  - id: "UCXUPKJO5MZQN11PqgIvyuvQ"
+    name: "Andrej Karpathy"
+    url: "https://www.youtube.com/@AndrejKarpathy"
+    domain: "ai"
+    priority: 6
+  - id: "UCP7jMXSY2xbc3KCAE0MHQ-A"
+    name: "Google DeepMind"
+    url: "https://www.youtube.com/@Google_DeepMind"
+    domain: "ai"
+    priority: 7
+  - id: "UCXZCJLdBC09xxGZ6gcdrc6A"
+    name: "OpenAI"
+    url: "https://www.youtube.com/@OpenAI"
+    domain: "ai"
+    priority: 8
+  - id: "UCDjPD0M-xxX7nT3cGnGI0vQ"
+    name: "Anthropic"
+    url: "https://www.youtube.com/@anthropic-ai"
+    domain: "ai"
+    priority: 9
+  - id: "UCZlA76u5kMm_vPLpgp2E_wA"
+    name: "Hugging Face"
+    url: "https://www.youtube.com/@HuggingFace"
+    domain: "ai"
+    priority: 10
+
+settings:
+  poll_interval_minutes: 15
+  max_videos_per_poll: 10
+  transcript_timeout_seconds: 30
+  summary_model: "deepseek-coder-v2:16b"
+  digest_hour: 6
+
+storage:
+  database: "data/signal_watch.db"
+  transcripts_dir: "data/transcripts"
+  digests_dir: "data/digests"
