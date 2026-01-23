@@ -11,9 +11,20 @@ PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 
 cd "$PROJECT_DIR"
 
-# Activate virtual environment if it exists
-if [ -f "venv/bin/activate" ]; then
+# Activate virtual environment if it exists (prefer .venv, fall back to venv)
+if [ -f ".venv/bin/activate" ]; then
+    # shellcheck disable=SC1091
+    source .venv/bin/activate
+elif [ -f "venv/bin/activate" ]; then
+    # shellcheck disable=SC1091
     source venv/bin/activate
+fi
+
+# Use python from the venv if activated; otherwise fall back to python3 on macOS.
+if command -v python >/dev/null 2>&1; then
+    PYTHON_BIN="python"
+else
+    PYTHON_BIN="python3"
 fi
 
 # Set Python path
@@ -22,12 +33,12 @@ export PYTHONPATH="$PROJECT_DIR:$PYTHONPATH"
 case "${1:-poll}" in
     poll)
         echo "[$(date)] Starting poll..."
-        python scripts/poll.py
+        "$PYTHON_BIN" scripts/poll.py
         echo "[$(date)] Poll complete"
         ;;
     digest)
         echo "[$(date)] Generating digest..."
-        python scripts/generate_digest.py
+        "$PYTHON_BIN" scripts/generate_digest.py
         echo "[$(date)] Digest complete"
         ;;
     server)

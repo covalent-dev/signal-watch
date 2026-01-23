@@ -28,12 +28,16 @@ Signal Watch is an automated system that watches domain-specific YouTube content
 cd ~/covalent-dev/signal-watch
 
 # Create virtual environment
-python -m venv venv
-source venv/bin/activate
+python3 -m venv .venv
+source .venv/bin/activate
 
 # Install dependencies
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
+
+Notes:
+- The command is `python3 -m venv .venv` (space before `.venv`). If you run `python3 -m venv/.venv`, Python will treat `venv/.venv` as a module name and fail.
+- If you use `pyenv`, set a local version first (e.g. `pyenv local 3.11.9`) so `python`/`pip` resolve correctly in this repo.
 
 ### Configuration
 
